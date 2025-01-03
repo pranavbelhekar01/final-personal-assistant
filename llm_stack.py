@@ -7,7 +7,7 @@ from templates import prompt_template, gemini_prompt
 import fitz 
 import os
 from google import genai
-from google.genai import types
+# from google.genai import types
 from dotenv import load_dotenv
 
 load_dotenv()
