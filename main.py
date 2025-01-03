@@ -13,7 +13,7 @@ from PyPDF2 import PdfReader
 # from langchain.prompts import PromptTemplate
 import requests
 import json
-from mangum import Mangum
+# from mangum import Mangum
 import fitz  # PyMuPDF
 from langchain_community.retrievers import ArxivRetriever
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -215,5 +215,5 @@ async def ask_question(request: QuestionRequest):
 
 
 
-# Add this line
-handler = Mangum(app)
+# # Add this line
+# handler = Mangum(app)
