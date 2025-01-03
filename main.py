@@ -15,7 +15,7 @@ import requests
 import json
 from mangum import Mangum
 import fitz  # PyMuPDF
-from langchain.retrievers import ArxivRetriever
+from langchain_community.retrievers import ArxivRetriever
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 from llm_stack import get_summary, get_gemini_resonse
