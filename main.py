@@ -14,7 +14,7 @@ from PyPDF2 import PdfReader
 import requests
 import json
 # from mangum import Mangum
-import fitz  # PyMuPDF
+import pdfplumber
 from langchain_community.retrievers import ArxivRetriever
 from sklearn.feature_extraction.text import TfidfVectorizer
 
@@ -128,9 +128,9 @@ def get_relevant_document(query):
 def extract_full_text_from_pdf(pdf_path):
     try:
         full_text = ""
-        with fitz.open(pdf_path) as doc:
-            for page in doc:
-                full_text += page.get_text()
+        with pdfplumber.open(pdf_path) as pdf:
+            for page in pdf.pages:
+                full_text += page.extract_text() or ""  # Avoid issues with None
         return full_text
     except Exception as e:
         return f"Error during text extraction: {str(e)}"
