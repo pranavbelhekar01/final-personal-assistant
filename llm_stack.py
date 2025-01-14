@@ -4,7 +4,7 @@ import google.generativeai as genai
 # import datetime
 # import time
 from templates import prompt_template, gemini_prompt
-import fitz 
+#import fitz 
 import os
 # from google import genai
 # from google.genai import types
